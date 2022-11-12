@@ -2,12 +2,19 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const coockieParser = require('cookie-parser');
 const app = express();
 
-global.response = require("./util/response").response;
+const handler = require("./util/response");
+
+// global handler
+global.response = handler.response;
+global.errorHandler = handler.errorHandler;
+
 
 app.use(cors());
 app.use(express.json());
+app.use(coockieParser());
 
 const indexRoute = require('./api/indexRoute') 
 app.use("/api/v1", indexRoute);
