@@ -1,0 +1,7 @@
+{
+  "SUCCESS": "Success.",
+  "NOTFOUND": "Not Found.",
+  "SERVERERROR": "Internal Server Error.",
+  "UNAUTHORIZED": "You Are Not Authorised",
+  "LOGIN":"Please Login First"
+}
