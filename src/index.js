@@ -5,6 +5,9 @@ const cors = require("cors");
 const coockieParser = require('cookie-parser');
 const app = express();
 
+//db
+const db = require('./db/db');
+
 const handler = require("./util/response");
 
 // global handler
