@@ -10,7 +10,7 @@ const db = require("./db/db");
 
 const handler = require("./util/response");
 
-// middleware
+// Rate limiter middleware
 const { rateLimiter } = require("./middleware/rateLimit");
 app.use(rateLimiter);
 
