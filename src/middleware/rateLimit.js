@@ -3,7 +3,7 @@ const rateLimitWindowMs = 15 * 60 * 1000; // 15 minutes
 const maxRequests = 100; // Max requests per IP
 const ipRequestCounts = new Map(); // In-memory store
 
-export function rateLimiter(req, res, next) {
+exports.rateLimiter = (req, res, next) =>{
   const ip = req.ip;
   const currentTime = Date.now();
 
