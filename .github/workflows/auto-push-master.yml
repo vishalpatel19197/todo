@@ -1,0 +1,28 @@
+name: Auto Push to Master
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  sync-to-master:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Important to fetch full history
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Push development to master
+        run: |
+          git checkout master
+          git merge origin/development --no-edit
+          git push origin master
