@@ -1,10 +1,11 @@
 const messages = require("./message.json");
 
+// Utility function to send a standardized response
 exports.response = (
+  res,
   status = 200,
   message = "SUCCESS",
-  successData = undefined,
-  res
+  successData = {},
 ) => {
   return res.status(status).json({
     success: true,
@@ -13,9 +14,10 @@ exports.response = (
   });
 };
 
+// Error handler for catching and responding to errors
 exports.errorHandler = (err, res) => {
   return res.status(err.status || 500).json({
     success: false,
-    message: err.message,
+    message: err.message || "An unexpected error occurred",
   });
 };
