@@ -1,7 +1,7 @@
 const app = require("express")();
 
 const auth = require('./authentication/authController');
-app.post('/singup', auth.singUp);
+app.post('/singin', auth.singIn);
 
 
 const { checkAuth } = require('../middleware/authentication') 

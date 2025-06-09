@@ -18,13 +18,22 @@
   },
   "homepage": "https://github.com/vishalpatel19197/todo#readme",
   "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.7.2"
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^6.7.2",
+    "serverless-http": "^3.2.0"
   }
 }
