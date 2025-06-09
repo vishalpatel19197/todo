@@ -1,4 +1,4 @@
-name: Auto Push to Master
+name: Auto Push to main
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - development
 
 jobs:
-  sync-to-master:
+  sync-to-main:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,8 +21,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Push development to master
+      - name: Push development to main
         run: |
-          git checkout master
+          git checkout main
           git merge origin/development --no-edit
-          git push origin master
+          git push origin main
