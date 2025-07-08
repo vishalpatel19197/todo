@@ -1,4 +1,3 @@
-const { t } = require("tar");
 const { response, errorHandler } = require("../../util/response");
 const userModel = require("../user/userModel");
 const bcrypt = require("bcryptjs");
