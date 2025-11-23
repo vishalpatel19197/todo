@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: String,
     unique: true,
-    required: true
+    required: true,
   },
   email: {
     type: String,
@@ -19,27 +19,22 @@ const userSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ["active", "inactive"],
-    default: "active",
+    default: "inactive",
   },
   type: {
     type: String,
     default: "user",
+    enum: ["user", "admin"],
   },
   role: {
     type: [String],
     default: [],
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
   password: {
     type: String,
   },
+},{
+  timestamps: true
 });
 
 const userModel = mongoose.model("user", userSchema);

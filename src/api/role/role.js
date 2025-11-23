@@ -37,10 +37,10 @@ const Roles = [
     roleName: "Add user role",
     key: "user_role_add",
     subId: 1,
-  }
+  },
 ];
 
-const addRoles = async () => {
+const addRoles = () => {
   try {
     Roles.forEach(async (role) => {
       const existingRole = await roleModel.findOne({ key: role.key }).lean();
@@ -55,4 +55,26 @@ const addRoles = async () => {
   }
 };
 
+const createAdmin = () => {
+  userModel
+    .findOne({ type: "admin" })
+    .exec()
+    .then((result) => {
+      if (result && result.type === "admin") {
+      } else {
+        userModel.create({
+          firstName: "vishal",
+          lastName: "patel",
+          email: "vishal@gmail.com",
+          password: "patel123",
+          phone: "8965124523",
+          role: [],
+          status: "active",
+          type: "admin",
+        });
+      }
+    });
+};
+
 addRoles();
+createAdmin();
